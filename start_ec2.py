@@ -30,7 +30,8 @@ def start_ec2_instances():
                       
             if len(instanceIds) > 0 : 
                 print "Starting instances: " + str(instanceIds)
-                ec2_client.start_instances(InstanceIds=instanceIds)                                                   
+                response = ec2_client.start_instances(InstanceIds=instanceIds) 
+                print response
                                                             
         except:
             print "Not expected error:", traceback.print_exc()
